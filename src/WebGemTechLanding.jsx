@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Code, Smartphone, Zap, Shield, Users, Star, ArrowRight, Menu, X, Check, Globe, Palette, Rocket, Heart, Play, Phone, Mail, MapPin } from 'lucide-react';
+import Form from './Form';
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { ChevronDown, Code, Smartphone, Zap, Shield, Users, Star, ArrowRight, Menu, X, Check, Globe, Palette, Rocket, Heart, Play, Phone, Mail, MapPin, Share2, MessageCircle, AtSign } from 'lucide-react';
 
 const WebGemTechLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,10 +97,10 @@ const WebGemTechLanding = () => {
   ];
 
   const portfolioItems = [
-    { title: "Local Restaurant", category: "Food & Dining", image: "🍽️" },
-    { title: "Hair Salon", category: "Beauty", image: "✂️" },
-    { title: "Auto Shop", category: "Automotive", image: "🔧" },
-    { title: "Flower Shop", category: "Retail", image: "🌸" }
+    { title: "Local Restaurant", category: "Food & Dining", image: "🍽️", link: "https://kingsbuffet.info/" },
+    { title: "Hair Salon", category: "Beauty", image: "✂️", link: "https://luxehairsaloon.info/" },
+    { title: "Auto Shop", category: "Automotive", image: "🔧", link: "https://webgemautoshop.info/" },
+    { title: "Flower Shop", category: "Retail", image: "🌸", link: "https://wwwgemflowerstore.info/" }
   ];
 
   useEffect(() => {
@@ -138,10 +140,10 @@ const WebGemTechLanding = () => {
       </div>
 
       {/* Mouse Follow Effect */}
-      <div 
+      <div
         className="fixed w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full pointer-events-none z-50 transition-transform duration-300 ease-out"
-        style={{ 
-          left: mousePosition.x - 12, 
+        style={{
+          left: mousePosition.x - 12,
           top: mousePosition.y - 12,
           transform: `scale(${Math.sin(Date.now() * 0.003) * 0.3 + 1})`,
           opacity: 0.6
@@ -158,17 +160,17 @@ const WebGemTechLanding = () => {
               </div>
               <span className="text-white font-bold text-2xl tracking-tight">WebGemTech</span>
             </div>
-            
+
             <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('services')} className=" text-gray/80 hover:text-gray/60 transition-colors duration-300">Services</button>
-              <button onClick={() => scrollToSection('pricing')} className="">Pricing</button>
-              <button onClick={() => scrollToSection('portfolio')} className="">Portfolio</button>
+              <button onClick={() => scrollToSection('services')} className=" text-white/80 hover:text-gray/60 transition-colors duration-300">Services</button>
+              <button onClick={() => scrollToSection('pricing')} className="text-white/80 hover:text-gray/60 transition-colors duration-300">Pricing</button>
+              <button onClick={() => scrollToSection('portfolio')} className="text-white/80 hover:text-gray/60 transition-colors duration-300">Portfolio</button>
               <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Started
               </button>
             </div>
-            
-            <button 
+
+            <button
               className="md:hidden text-white p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -176,7 +178,7 @@ const WebGemTechLanding = () => {
             </button>
           </div>
         </div>
-        
+
         {isMenuOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/20">
             <div className="px-4 py-6 space-y-4">
@@ -200,21 +202,21 @@ const WebGemTechLanding = () => {
                 <Heart className="w-4 h-4 text-pink-400 mr-2" />
                 <span className="text-white font-medium">Loved by 50+ Small Businesses</span>
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Stunning Websites
                 <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 text-transparent bg-clip-text animate-pulse">
                   Starting $650
                 </span>
               </h1>
-              
+
               <p className="text-xl text-white/80 mb-8 leading-relaxed max-w-2xl">
-                Finally, professional web development that fits your budget. No contracts, no hidden fees - 
+                Finally, professional web development that fits your budget. No contracts, no hidden fees -
                 just beautiful websites that help small businesses like yours thrive online.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-6 items-start">
-                <button 
+                <button
                   onClick={() => scrollToSection('pricing')}
                   className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center group"
                 >
@@ -228,7 +230,7 @@ const WebGemTechLanding = () => {
                   <span className="text-white/70">Watch our 2-min intro</span>
                 </div>
               </div>
-              
+
               <div className="mt-12 flex items-center space-x-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-white">50+</div>
@@ -244,27 +246,27 @@ const WebGemTechLanding = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
                 <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-bounce">
                   LIVE DEMO
                 </div>
-                
+
                 <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-white/10">
                   <div className="flex items-center space-x-2 mb-4">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-4">
                       <div className="text-white font-semibold mb-2">{portfolioItems[currentSlide].title}</div>
                       <div className="text-white/70 text-sm">{portfolioItems[currentSlide].category}</div>
                       <div className="text-4xl mt-2">{portfolioItems[currentSlide].image}</div>
                     </div>
-                    
+
                     <div className="grid grid-cols-3 gap-2">
                       <div className="bg-white/10 rounded h-8"></div>
                       <div className="bg-white/10 rounded h-8"></div>
@@ -272,7 +274,7 @@ const WebGemTechLanding = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="mt-6 text-center">
                   <div className="text-white/60 text-sm">Real websites we've built</div>
                   <div className="flex justify-center space-x-2 mt-2">
@@ -288,7 +290,7 @@ const WebGemTechLanding = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20 backdrop-blur">
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20 backdrop-blur">
         <div className="w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -298,7 +300,7 @@ const WebGemTechLanding = () => {
               We focus on what matters most for small businesses - getting you online fast, looking professional, and converting visitors into customers.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="group">
@@ -329,24 +331,21 @@ const WebGemTechLanding = () => {
             <p className="text-white/70 text-xl max-w-3xl mx-auto">
               Choose what works for your business and budget. All prices include everything you need to get online and start growing.
             </p>
-            
+
             <div className="inline-flex items-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-6 py-3 mt-6">
               <span className="text-green-400 font-semibold">🎉 Save up to 50% - Limited Time Offer</span>
             </div>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          
 
 
-  {pricingPlans.map((plan, index) => (
-              <div key={index} className={`relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border-2 ${
-                plan.popular 
-                  ? 'border-purple-400 ring-4 ring-purple-400/20 transform scale-105' 
-                  : 'border-white/20 hover:border-white/40'
-              } transition-all duration-500 hover:transform hover:scale-105 group`}>
 
-
+            {pricingPlans.map((plan, index) => (
+              <div key={index} className={`relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border-2 ${plan.popular
+                ? 'border-purple-400 ring-4 ring-purple-400/20 transform scale-105'
+                : 'border-white/20 hover:border-white/40'
+                } transition-all duration-500 hover:transform hover:scale-105 group`}>
 
 
 
@@ -359,7 +358,9 @@ const WebGemTechLanding = () => {
 
 
 
-                
+
+
+
                 {plan.popular && (
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
                     <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
@@ -367,7 +368,7 @@ const WebGemTechLanding = () => {
                     </div>
                   </div>
                 )}
-                
+
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                   <div className="flex items-center justify-center space-x-2 mb-2">
@@ -381,7 +382,7 @@ const WebGemTechLanding = () => {
                     <span className="text-blue-300 text-sm font-semibold">⚡ Ready in {plan.deliveryTime}</span>
                   </div>
                 </div>
-                
+
                 <ul className="space-y-4 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start text-white/90">
@@ -390,22 +391,21 @@ const WebGemTechLanding = () => {
                     </li>
                   ))}
                 </ul>
-                
-                <button className={`w-full py-4 rounded-full font-semibold text-lg transition-all duration-300 ${
-                  plan.popular 
-                    ? `bg-gradient-to-r ${plan.color} text-white hover:shadow-2xl transform hover:scale-105` 
-                    : `bg-gradient-to-r ${plan.color} border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50`
-                } group-hover:shadow-xl`}>
+
+                <button className={`w-full py-4 rounded-full font-semibold text-lg transition-all duration-300 ${plan.popular
+                  ? `bg-gradient-to-r ${plan.color} text-white hover:shadow-2xl transform hover:scale-105`
+                  : `bg-gradient-to-r ${plan.color} border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50`
+                  } group-hover:shadow-xl`}>
                   {plan.popular ? '🚀 Get Started Now' : 'Choose This Plan'}
                 </button>
-                
+
                 <div className="text-center mt-4">
                   <span className="text-white/60 text-sm">No setup fees • No contracts</span>
                 </div>
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-16">
             <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/20 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-white mb-4">Need Something Custom?</h3>
@@ -431,7 +431,7 @@ const WebGemTechLanding = () => {
               See how we've helped small businesses like yours grow their online presence and increase revenue.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {portfolioItems.map((item, index) => (
               <div key={index} className="group cursor-pointer">
@@ -446,7 +446,7 @@ const WebGemTechLanding = () => {
                     {item.category}
                   </p>
                   <div className="mt-4 text-center">
-                    <span className="text-green-400 text-sm font-semibold">View Live Site →</span>
+                    <a href={item.link}><span className="text-green-400 text-sm font-semibold">View Live Site →</span></a>
                   </div>
                 </div>
               </div>
@@ -466,7 +466,7 @@ const WebGemTechLanding = () => {
               Real feedback from real small business owners who chose WebGemTech.
             </p>
           </div>
-          
+
           <div className="relative">
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-10 border border-white/20 text-center shadow-2xl">
               <div className="flex justify-center mb-6">
@@ -474,11 +474,11 @@ const WebGemTechLanding = () => {
                   <Star key={i} className="w-8 h-8 text-yellow-400 fill-current" />
                 ))}
               </div>
-              
+
               <blockquote className="text-white text-2xl mb-6 leading-relaxed font-medium">
                 "{testimonials[activeTestimonial].text}"
               </blockquote>
-              
+
               <div className="mb-4">
                 <div className="font-semibold text-white text-xl">
                   {testimonials[activeTestimonial].name}
@@ -494,36 +494,35 @@ const WebGemTechLanding = () => {
               </div>
             </div>
             <div className="flex justify-center mt-8 space-x-3">
-            {testimonials.map((_, index) => {
+              {testimonials.map((_, index) => {
                 const isActive = index === activeTestimonial;
                 return (
-                <button
+                  <button
                     key={index}
-                    className={`w-4 h-4 rounded-full transition-all duration-300 cursor-pointer focus:outline-none ${
-                    isActive 
-                        ? 'scale-125 shadow-lg' 
-                        : 'hover:scale-110'
-                    }`}
+                    className={`w-4 h-4 rounded-full transition-all duration-300 cursor-pointer focus:outline-none ${isActive
+                      ? 'scale-125 shadow-lg'
+                      : 'hover:scale-110'
+                      }`}
                     style={{
-                    background: isActive 
-                        ? 'linear-gradient(to right, #a855f7, #ec4899)' 
+                      background: isActive
+                        ? 'linear-gradient(to right, #a855f7, #ec4899)'
                         : 'rgba(255, 255, 255, 0.3)'
                     }}
                     onMouseEnter={(e) => {
-                    if (!isActive) {
+                      if (!isActive) {
                         e.target.style.background = 'rgba(255, 255, 255, 0.5)';
-                    }
+                      }
                     }}
                     onMouseLeave={(e) => {
-                    if (!isActive) {
+                      if (!isActive) {
                         e.target.style.background = 'rgba(255, 255, 255, 0.3)';
-                    }
+                      }
                     }}
                     onClick={() => setActiveTestimonial(index)}
                     aria-label={`View testimonial ${index + 1}`}
-                />
+                  />
                 );
-            })}
+              })}
             </div>
 
           </div>
@@ -539,10 +538,10 @@ const WebGemTechLanding = () => {
                 Ready to Get Started?
               </h2>
               <p className="text-white/70 text-xl mb-8 leading-relaxed">
-                Join hundreds of small businesses who trust WebGemTech. Let's create something amazing together, 
+                Join hundreds of small businesses who trust WebGemTech. Let's create something amazing together,
                 starting from just $650.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
@@ -550,20 +549,20 @@ const WebGemTechLanding = () => {
                   </div>
                   <div>
                     <div className="text-white font-semibold">Call us directly</div>
-                    <div className="text-white/70">(555) 123-GEMS</div>
+                    <div className="text-white/70">(204) 720-5433</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="text-white font-semibold">Email us</div>
-                    <div className="text-white/70">hello@webgemtech.com</div>
+                    <div className="text-white/70">webgemtech@yahoo.com</div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
@@ -575,52 +574,12 @@ const WebGemTechLanding = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">Get Your Free Quote</h3>
-              
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all"
-                  />
-                  <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all"
-                  />
-                </div>
-                
-                <input 
-                  type="text" 
-                  placeholder="Business Name" 
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all"
-                />
-                
-                <select className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all">
-                  <option value="" className="bg-slate-800">Select Package Interest</option>
-                  <option value="starter" className="bg-slate-800">Starter - $650</option>
-                  <option value="professional" className="bg-slate-800">Professional - $1,450</option>
-                  <option value="premium" className="bg-slate-800">Premium - $2,500</option>
-                  <option value="custom" className="bg-slate-800">Custom Solution</option>
-                </select>
-                
-                <textarea 
-                  placeholder="Tell us about your business and what you need..."
-                  rows="4"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all resize-none"
-                ></textarea>
-                
-                <button type="submit" className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 rounded-lg font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Get My Free Quote 🚀
-                </button>
-                
-                <p className="text-white/60 text-sm text-center">
-                  We'll respond within 2 hours during business hours
-                </p>
-              </form>
+
+              <Form />
+
             </div>
           </div>
         </div>
@@ -639,7 +598,7 @@ const WebGemTechLanding = () => {
                 Not happy? Get your money back within 30 days, no questions asked.
               </p>
             </div>
-            
+
             <div className="group">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Zap className="w-8 h-8 text-white" />
@@ -649,7 +608,7 @@ const WebGemTechLanding = () => {
                 Most websites completed and live within 5-14 days.
               </p>
             </div>
-            
+
             <div className="group">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Users className="w-8 h-8 text-white" />
@@ -659,7 +618,7 @@ const WebGemTechLanding = () => {
                 Free support included with every package. We're here when you need us.
               </p>
             </div>
-            
+
             <div className="group">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Heart className="w-8 h-8 text-white" />
@@ -680,12 +639,12 @@ const WebGemTechLanding = () => {
             Your Website Could Be Live Next Week
           </h2>
           <p className="text-white/80 text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            Stop losing customers to competitors with better websites. Join the 50+ small businesses 
+            Stop losing customers to competitors with better websites. Join the 50+ small businesses
             who chose WebGemTech and are now thriving online.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button 
+            <button
               onClick={() => scrollToSection('pricing')}
               className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-10 py-5 rounded-full text-xl font-bold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-2xl"
             >
@@ -696,7 +655,7 @@ const WebGemTechLanding = () => {
               <div className="text-white/80 text-lg">(204) 720-5433</div>
             </div>
           </div>
-          
+
           <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/60">
             <div className="flex items-center space-x-2">
               <Check className="w-5 h-5 text-green-400" />
@@ -730,22 +689,22 @@ const WebGemTechLanding = () => {
                 <span className="text-white font-bold text-2xl">WebGemTech</span>
               </div>
               <p className="text-white/70 mb-6 leading-relaxed">
-                Beautiful, affordable websites for small businesses. 
+                Beautiful, affordable websites for small businesses.
                 Based in Brandon, MB, serving businesses across Canada.
               </p>
               <div className="flex space-x-4">
                 <div className="w-10 h-10 bg-white/0 rounded-lg flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer">
-                  <a href='' className="text-white text-sm"><img src='src/facebook.png'></img></a>
+                  <a href='https://www.facebook.com/share/1AzL4Xt7KQ/?mibextid=wwXIfr' className="text-white text-sm"><FaFacebookF size={24} /></a>
                 </div>
                 <div className="w-10 h-10 bg-white/0 rounded-lg flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer">
-                  <a href='' className="text-white text-sm"><img src='src/instagram.png'></img></a>
+                  <a href='https://www.instagram.com/webgem.tech?igsh=MWM1bmd1ZDBqOTYxNA==' className="text-white text-sm"><FaInstagram size={24} /></a>
                 </div>
                 <div className="w-10 h-10 bg-white/0 rounded-lg flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer">
-                  <a href='' className="text-white text-sm"><img src='src/twitter.png'></img></a>
+                  <a href='https://x.com/webgem_tech?s=21' className="text-white text-sm"><FaTwitter size={24} /></a>
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h3 className="text-white font-semibold text-lg mb-6">Services</h3>
               <ul className="space-y-3 text-white/70">
@@ -756,7 +715,7 @@ const WebGemTechLanding = () => {
                 <li className="hover:text-white transition-colors cursor-pointer">SEO Optimization</li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-white font-semibold text-lg mb-6">Pricing</h3>
               <ul className="space-y-3 text-white/70">
@@ -767,7 +726,7 @@ const WebGemTechLanding = () => {
                 <li className="hover:text-white transition-colors cursor-pointer">Free Quotes</li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-white font-semibold text-lg mb-6">Contact</h3>
               <ul className="space-y-3 text-white/70">
@@ -777,14 +736,14 @@ const WebGemTechLanding = () => {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>hello@webgemtech.com</span>
+                  <span>webgemtech@yahoo.com</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <MapPin className="w-4 h-4" />
                   <span>Brandon, MB, Canada</span>
                 </li>
               </ul>
-              
+
               <div className="mt-6 bg-gradient-to-r from-white/10 to-white/5 rounded-lg p-4 border border-white/20">
                 <div className="text-white font-semibold text-sm mb-1">Business Hours</div>
                 <div className="text-white/70 text-sm">Mon-Fri: 9AM-6PM CST</div>
@@ -792,7 +751,7 @@ const WebGemTechLanding = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-white/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-white/60 text-sm mb-4 md:mb-0">
